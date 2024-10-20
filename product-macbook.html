@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacBook Pro 16" - Product Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+        <a class="navbar-brand" href="#">Exclusive Tech Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="laptops.html">Products</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Product Details Section -->
+    <section class="container my-5">
+        <div class="row">
+            <!-- Product Image -->
+            <div class="col-md-6">
+                <img src="C:\Users\pinak\OneDrive\Pictures\wt web\mac.jpg" class="img-fluid" alt="MacBook Pro 16">
+            </div>
+            <!-- Product Details -->
+            <div class="col-md-6">
+                <h2>MacBook Pro 16"</h2>
+                <p>M1 Pro Chip, 16GB RAM, 512GB SSD, Space Gray</p>
+                <h4 class="text-danger">$2,499</h4>
+                <p><strong>Specifications:</strong></p>
+                <ul>
+                    <li>16-inch Retina Display with True Tone</li>
+                    <li>Apple M1 Pro Chip with 10-core CPU</li>
+                    <li>16GB Unified Memory</li>
+                    <li>512GB SSD Storage</li>
+                    <li>AMD Radeon Pro 5500M Graphics</li>
+                    <li>Up to 21 Hours Battery Life</li>
+                </ul>
+                <a href="#" class="btn btn-warning btn-lg" id="add-to-cart">Add to Cart</a>
+            </div>
+        </div>
+
+        <!-- Product Description -->
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h4>Product Description</h4>
+                <p>The MacBook Pro 16" is designed for professionals who require power, performance, and reliability. Equipped with Apple's M1 Pro chip, this laptop is capable of handling intensive tasks like video editing, software development, and 3D rendering with ease. The stunning Retina Display offers crystal-clear visuals, while the long battery life ensures uninterrupted productivity throughout the day. Whether you're a creative professional or a business user, the MacBook Pro 16" is a top-tier device that delivers unmatched performance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2024 Exclusive Tech Store. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Function to add the product to the cart
+        document.getElementById('add-to-cart').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+
+            const product = {
+                name: 'MacBook Pro 16"',
+                price: 2499.00,
+                image: 'C:\\Users\\pinak\\OneDrive\\Pictures\\wt web\\mac.jpg' // Ensure this path is accessible in your hosting environment
+            };
+
+            // Get existing cart from local storage or create a new array
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product); // Add the new product to the cart
+
+            // Save the updated cart back to local storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Redirect to cart.html
+            window.location.href = 'cart.html';
+        });
+    </script>
+</body>
+</html>
